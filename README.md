@@ -304,7 +304,7 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
-### Casos de prueba - BMI (Body Mass Index) - Versión FULL
+## Casos de prueba - BMI (Body Mass Index) - Versión FULL
 El **Índice de Masa Corporal (BMI)** en su versión **FULL** permite una clasificación detallada del estado nutricional siguiendo los criterios de la OMS. 
 
 * **Clasificación de Delgadez:**
