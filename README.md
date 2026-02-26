@@ -252,7 +252,6 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
-
 ## Instalación y ejecución
 
 <details>
@@ -304,3 +303,37 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Ejecutar los tests con informe de cobertura (previamente configurado en pom.xml): `mvn test`
 
 </details>
+
+### Casos de prueba - BMI (Body Mass Index) - Versión FULL
+El **Índice de Masa Corporal (BMI)** en su versión **FULL** permite una clasificación detallada del estado nutricional siguiendo los criterios de la OMS. 
+
+* **Clasificación de Delgadez:**
+    * **Entrada:** BMI inferior a $18.5$.
+    * **Ejemplos de prueba:**
+        * BMI = 15.5, el resultado debe ser "Severe thinness".
+        * BMI = 16.5, el resultado debe ser "Moderate thinness".
+        * BMI = 17.5, el resultado debe ser "Mild thinness".
+
+* **Rango Saludable y Sobrepeso:**
+    * **Entrada:** BMI en el intervalo $[18.5, 30.0)$.
+    * **Ejemplo de prueba:**
+        * BMI = 22.0, el resultado debe ser "Normal weight".
+        * BMI = 27.5, el resultado debe ser "Overweight".
+
+* **Clasificación de Obesidad:**
+    * **Entrada:** BMI mayor o igual a $30.0$.
+    * **Ejemplos de prueba:**
+        * BMI = 32.0, el resultado debe ser "Obese Class I (Moderate)".
+        * BMI = 37.0, el resultado debe ser "Obese Class II (Severe)".
+        * BMI = 45.0, el resultado debe ser "Obese Class III (Morbid)".
+
+* **Entrada de Valores No Válidos:**
+    * **Entrada:** Valores fuera del rango biológico establecido $[0,150]$.
+    * **Ejemplos de prueba:** BMI = -5.0, BMI= 160.0.
+    * **Resultado esperado:** El sistema debe lanzar **Excepción / Error**, ya que no existen valores biológicos fuera de este rango.
+
+* **Inconsistencia de Datos de Entrada:**
+    * **Entrada:** Peso inferior a $1$ kg o superior a $700$, y altura inferior a $0.30$ m o superior a $4.00$ m.
+    * **Ejemplos de prueba:** Weight = 0.5 kg, Height = 0.20 m.
+    * **Resultado esperado:** El sistema debe lanzar **Excepción / Error** por superar los límites biológicos reales de un ser humano. 
+         
