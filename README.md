@@ -260,7 +260,7 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 La **Presión Arterial Media (MAP)** representa la presión promedio en las arterias durante un ciclo cardíaco completo. Se calcula mediante la fórmula: $$MAP = \frac{PAS + 2(PAD)}{3}$$
 
 * **Cálculo estándar:**
-    * **Entrada:** Valores en rango fisiológico común (PAS: 100-140, PAD: 60-90).
+    * **Entrada:** Valores de presiones habituales (PAS: 100-140, PAD: 60-90).
     * **Ejemplo:** PAS = 120, PAD = 80.
     * **Resultado esperado:** 93.33 mmHg.
 * **Entradas de Valores No Válidos:**
