@@ -13,19 +13,22 @@ public class HealthCalcImpl implements HealthCalc {
             throw new InvalidHealthDataException("BMI must be within a possible biological range [0-150].");
         }
         String result = "Obesity";
-        // if (bmi < 18.5) {
-        //     result = "Underweight";
-        // } else if (bmi >= 18.5 && bmi < 25) {
-        //     result = "Normal weight";
-        // } else if (bmi >= 25 && bmi < 30) {
-        //     result = "Overweight";
-        // }
-        if (bmi < 18.5) {
-            result = "Underweight";
-        } else if (bmi < 25) {
+        if (bmi < 16.0) {
+            result = "Severe thinness";
+        } else if (bmi < 17.0) {
+            result = "Moderate thinness";
+        } else if (bmi < 18.5) {
+            result = "Mild thinness";
+        } else if (bmi < 25.0) {
             result = "Normal weight";
-        } else if (bmi < 30) {
+        } else if (bmi < 30.0) {
             result = "Overweight";
+        } else if (bmi < 35.0) {
+            result = "Obese Class I (Moderate)";
+        } else if (bmi < 40.0) {
+            result = "Obese Class II (Severe)";
+        } else {
+            result = "Obese Class III (Morbid)";
         }
         return result;
     }

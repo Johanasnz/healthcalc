@@ -252,6 +252,56 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+### Casos de prueba - BMI (Body Mass Index) - Versión FULL
+
+<details>
+<summary><b>Pruebas de Cálculo del BMI - Versión FULL</b></summary>
+
+El **Índice de Masa Corporal (BMI)** en su versión **FULL** permite una clasificación detallada del estado nutricional siguiendo los criterios de la OMS. Se calcula mediante la fórmula: $BMI = \frac{\text{Peso (kg)}}{\text{Altura (m)}^2}$ .
+
+* **Cálculo estándar:**
+    * **Entrada:** Valores de peso y altura dentro del rango biológico normal.
+    * **Ejemplo:** Peso = 85.0 kg, Altura = 1.80 m.
+    * **Resultado esperado:** 26.23 (aproximadamente).
+
+* **Entrada de Valores No Válidos:**
+    * **Entrada:** Valores fuera del rango biológico establecido $[0,150]$.
+    * **Ejemplos de prueba:** BMI = -5.0, BMI= 160.0.
+    * **Resultado esperado:** El sistema debe lanzar **InvalidHealthDataException**, ya que no existen valores biológicos fuera de este rango.
+
+* **Inconsistencia de Datos de Entrada:**
+    * **Entrada:** Peso inferior a $1$ kg o superior a $700$, y altura inferior a $0.30$ m o superior a $3.00$ m.
+    * **Ejemplos de prueba:** Peso = 0.5 kg, Altura = 0.20 m.
+    * **Resultado esperado:** El sistema debe lanzar **InvalidHealthDataException** por superar los límites biológicos reales de un ser humano. 
+         
+</details>
+
+<details>
+<summary><b>Pruebas de Clasificación del Estado de Salud basado en el BMI - Versión FULL</b></summary>
+
+Una vez obtenido un BMI válido, se clasifica el estado de salud del paciente.
+
+* **Clasificación de Delgadez:**
+    * **Entrada:** BMI inferior a $18.5$.
+    * **Ejemplos de prueba:**
+        * BMI = 15.5, el resultado debe ser "Severe thinness".
+        * BMI = 16.5, el resultado debe ser "Moderate thinness".
+        * BMI = 17.5, el resultado debe ser "Mild thinness".
+
+* **Rango Saludable y Sobrepeso:**
+    * **Entrada:** BMI en el intervalo $[18.5, 30.0)$.
+    * **Ejemplo de prueba:**
+        * BMI = 22.0, el resultado debe ser "Normal weight".
+        * BMI = 27.5, el resultado debe ser "Overweight".
+
+* **Clasificación de Obesidad:**
+    * **Entrada:** BMI mayor o igual a $30.0$.
+    * **Ejemplos de prueba:**
+        * BMI = 32.0, el resultado debe ser "Obese Class I (Moderate)".
+        * BMI = 37.0, el resultado debe ser "Obese Class II (Severe)".
+        * BMI = 45.0, el resultado debe ser "Obese Class III (Morbid)".
+</details>
+
 ### Casos de Prueba - Presión Arterial Media (MAP)
 
 <details>
