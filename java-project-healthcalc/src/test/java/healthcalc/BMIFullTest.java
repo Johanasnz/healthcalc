@@ -79,7 +79,7 @@ public class BMIFullTest {
 
         @ParameterizedTest(name = "Altura mínima inválida: {0} m")
         @ValueSource(doubles = {-0.50, 0.0, 0.29})
-        @DisplayName("Bloqueo de alturas inferiores al límite biológico mínimo (30 m)")
+        @DisplayName("Bloqueo de alturas inferiores al límite biológico mínimo (0.30 m)")
         void testAlturaMinimaImposible(double height) {
             double weight = 70.0;
             
