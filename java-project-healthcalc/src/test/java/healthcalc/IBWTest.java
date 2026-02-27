@@ -31,7 +31,7 @@ public class IBWTest {
             int height = 175;
             double expectedIbw = 68.75; // Calculated for height 175cm, male
 
-            double result = healthCalc.ibw(height, "Hombre");
+            double result = healthCalc.ibw(height, "hombre");
             assertEquals(expectedIbw, result, 0.01);
         }
 
@@ -41,7 +41,7 @@ public class IBWTest {
             int height = 165;
             double expectedIbw = 59.0; // Calculated for height 165cm, female 
             
-            double result = healthCalc.ibw(height, "Mujer");
+            double result = healthCalc.ibw(height, "mujer");
             assertEquals(expectedIbw, result, 0.01);
         }
 
@@ -49,7 +49,7 @@ public class IBWTest {
         @DisplayName("Lanzar excepción para altura por debajo del rango válido")
         void testIbwHeightBelowRange() {
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(100, "Hombre");
+                healthCalc.ibw(100, "hombre");
             });
         }
 
@@ -57,7 +57,7 @@ public class IBWTest {
         @DisplayName("Lanzar excepción para sexo no válido")
         void testIbwInvalidGender() {
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(175, "NoBinario");
+                healthCalc.ibw(175, "nobinario");
             });
         }
 
@@ -73,7 +73,7 @@ public class IBWTest {
         @DisplayName("Lanzar excepción para altura negativa")
         void testIbwNegativeHeight() {
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(-175, "Hombre");
+                healthCalc.ibw(-175, "hombre");
             });
         }
 
@@ -81,7 +81,7 @@ public class IBWTest {
         @DisplayName("Lanzar excepción para altura cero o nula")
         void testIbwZeroHeight() {
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(0, "Hombre");
+                healthCalc.ibw(0, "hombre");
             });
         }
 
@@ -91,7 +91,7 @@ public class IBWTest {
         void testIbwMinHeightInvalid(int height) {
             
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(height, "Hombre");
+                healthCalc.ibw(height, "hombre");
             });
         }
 
@@ -101,12 +101,12 @@ public class IBWTest {
         void testIbwMaxHeightInvalid(int height) {
             
             assertThrows(InvalidHealthDataException.class, () -> {
-                healthCalc.ibw(height, "Hombre");
+                healthCalc.ibw(height, "hombre");
             });
         }
 
         @ParameterizedTest(name = "Sexo no válido: {0}")
-        @ValueSource(strings = {"NoBinario", "Otro", "Desconocido", ""})
+        @ValueSource(strings = {"nobinario", "otro", "desconocido", ""})
         @DisplayName("Bloqueo de sexos no válidos")
         void testIbwInvalidGender(String sexo) {
             int height = 175;
@@ -118,11 +118,11 @@ public class IBWTest {
 
         @ParameterizedTest(name = "Valores válidos: altura={0} cm, sexo={1}, IBW esperado={2} kg")
         @CsvSource({
-            "150,Hombre,50.0",
-            "175,Hombre,68.75",
-            "180,Hombre,72.5",
-            "160,Mujer,56.0",
-            "170,Mujer,62.0"
+            "150,hombre,50.0",
+            "175,hombre,68.75",
+            "180,hombre,72.5",
+            "160,mujer,56.0",
+            "170,mujer,62.0"
         })
         @DisplayName("Verificación de cálculo de IBW con valores válidos")
         void testIbwValidValues(int height, String sexo, double expectedIbw) {
