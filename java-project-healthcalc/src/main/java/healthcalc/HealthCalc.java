@@ -25,7 +25,7 @@ public interface HealthCalc {
 	public String bmiClassification(double bmi) throws InvalidHealthDataException;
 	
 	/**
-	 * Calculate the Body Mass Index (BMI) of a person with the Harris-Benedict formula:
+	 * Calculate the Body Mass Index (BMI) of a person:
 	 *
 	 * @param weight	Weight of the person (kg).
 	 * @param height 	Height of the person (cm).
