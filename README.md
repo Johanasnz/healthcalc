@@ -301,6 +301,7 @@ Una vez obtenido un BMI válido, se clasifica el estado de salud del paciente.
         * BMI = 37.0, el resultado debe ser "Obese Class II (Severe)".
         * BMI = 45.0, el resultado debe ser "Obese Class III (Morbid)".
 </details>
+
 ### Casos de Prueba - Presión Arterial Media (MAP)
 
 <details>
