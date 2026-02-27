@@ -252,6 +252,47 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+### Casos de Prueba - Presión Arterial Media (MAP)
+
+<details>
+<summary><b>Pruebas de Cálculo del MAP</b></summary>
+
+La **Presión Arterial Media (MAP)** representa la presión promedio en las arterias durante un ciclo cardíaco completo. Se calcula mediante la fórmula: $$MAP = \frac{PAS + 2(PAD)}{3}$$
+
+* **Cálculo estándar:**
+    * **Entrada:** Valores de presiones habituales (PAS: 100-140, PAD: 60-90).
+    * **Ejemplo:** PAS = 120, PAD = 80.
+    * **Resultado esperado:** 93.33 mmHg.
+* **Entradas de Valores No Válidos:**
+    * **Entrada:** Valores negativos o iguales a cero.
+    * **Ejemplo:** PAS = -120, PAD = 0.
+    * **Resultado esperado:** Excepción/Error (InvalidHealthDataException).
+* **Inconsistencia Biológica:**
+    * **Entrada:** Presión Diastólica mayor o igual a la Sistólica.
+    * **Ejemplo:** PAS = 70, PAD = 110.
+    * **Resultado esperado:** Excepción/Error.
+* **Límites Físicos:**
+    * **Entrada:** Valores que superan los límites de la supervivencia humana.
+    * **Ejemplo:** PAS = 350, PAD = 220.
+    * **Resultado esperado:** Excepción/Error.
+</details>
+
+<details>
+<summary><b>Pruebas de Clasificación del Estado de Perfusión (MAP)</b></summary>
+
+A partir del valor numérico obtenido, el sistema categoriza el estado del paciente:
+
+* **MAP Low (Baja):**
+    * **Rango:** Valores menores a 70 mmHg.
+    * **Resultado esperado:** "Low".
+* **MAP Normal (Saludable):**
+    * **Rango:** Valores entre 70 y 100 mmHg (inclusive).
+    * **Resultado esperado:** "Normal".
+* **MAP High (Alta):**
+    * **Rango:** Valores mayores a 100 mmHg.
+    * **Resultado esperado:** "High".
+</details>
+
 
 ## Instalación y ejecución
 
@@ -304,3 +345,5 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Ejecutar los tests con informe de cobertura (previamente configurado en pom.xml): `mvn test`
 
 </details>
+
+
