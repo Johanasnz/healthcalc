@@ -11,11 +11,13 @@ public class Main {
         System.out.println("=== CALCULADORA DE SALUD GRUPAL ===");
         System.out.println("1. Calcular BMI (Índice de Masa Corporal) - Versión FULL");
         System.out.println("2. Calcular MAP (Presión Arterial Media)");
+        System.out.println("3. Calculadora de IBW (Peso Ideal)");
         System.out.print("Selecciona una opción: ");
 
         int opcion = scanner.nextInt();
         
         try {
+          
             if (opcion == 1) {
                 //BMI
                 System.out.print("Introduce tu peso (kg): ");
@@ -45,6 +47,15 @@ public class Main {
                 System.out.println("\n--- RESULTADOS ---");
                 System.out.printf("Valor MAP: %.2f mmHg\n", map);
                 System.out.println("Clasificación: " + clasificacion);
+              
+            } else if (opcion == 3) {
+                //IBW
+                System.out.print("Ingrese su altura en cm: ");
+                int altura = scanner.nextInt();
+                System.out.print("Escriba su sexo (Hombre o Mujer): ");
+                String sexo = scanner.next().toLowerCase(); 
+                double ibw = calculator.ibw(altura, sexo);
+                System.out.println("Su IBW es: " + ibw);
             } else {
                 System.out.println("Opción no válida.");
             }

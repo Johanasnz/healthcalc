@@ -38,6 +38,15 @@ public interface HealthCalc {
 	 */
 	public double bmi(double weight, double height) throws InvalidHealthDataException;
 
+	/**
+	 * Calculate the Ideal Body Weight (IBW) of a person.
+	 *
+	 * @param height	Height of the person (cm).
+	 * @param gender 	Gender of the person ("Hombre" or "Mujer").
+	 * @return	  		The Ideal Body Weight of the person (kg).
+	 * @throws InvalidHealthDataException
+	 */
+	public double ibw(int height, String gender) throws InvalidHealthDataException;
 	public float calculateMAP(float pas, float pad) throws InvalidHealthDataException;
 	public String mapClassification(float map) throws InvalidHealthDataException;
 
