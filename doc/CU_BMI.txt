@@ -38,5 +38,5 @@ Escenario principal de éxito:
     6.La calculadora devuelve el valor del BMI y la clasificación de la OMS al usuario.
 
 Extensiones:
-4a. El usuario ha introducido valores incorrectos (letras o números negativos): La calculadora informará al usuario que los valores introducidos no son válidos y volverá al punto de partida para que los corrija.
-6a. Los datos están fuera de rangos biológicos lógicos (ej. altura > 3 metros): La calculadora pedirá al usuario confirmar si los datos son correctos antes de mostrar el resultado.
+4a. El usuario ha introducido valores incorrectos. La calculadora informará al usuario que los valores introducidos no son válidos y volverá al punto de partida para que los corrija.
+4b. Los datos están fuera de rangos biológicos lógicos. La calculadora pedirá al usuario confirmar si los datos son correctos antes de mostrar el resultado.
