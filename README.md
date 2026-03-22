@@ -404,10 +404,17 @@ A partir del valor numérico obtenido, el sistema categoriza el estado del pacie
 
 </details>
 
-
+  
 <details>
 <summary><b>Especificación</b></summary>
 
+### Casos de uso 
+Diagrama de casos de uso de la calculadora de salud. Los casos de uso implementados en la Práctica 1 se muestran en **azul** y en **rojo** los que no.
+![Diagrama de Casos de Uso](./doc/diagrama_casos_uso.png)
+
+#### Enlaces a la documentación de los Casos de Uso:
+* [Especificación Caso de Uso 1: BMI (Versión Full)](./doc/CU_BMI.txt)
 * [Especificación Caso de Uso 2: IBW](./doc/CU_IBW.txt)
+* [Especificación Caso de Uso 3: MAP](./doc/CU_MAP.txt)
 
 </details>
