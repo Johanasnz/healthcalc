@@ -405,3 +405,9 @@ A partir del valor numérico obtenido, el sistema categoriza el estado del pacie
 </details>
 
 
+<details>
+<summary><b>Especificación</b></summary>
+
+* [Especificación Caso de Uso 2: IBW](./doc/CU_IBW.txt)
+
+</details>
