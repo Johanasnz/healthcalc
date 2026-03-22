@@ -412,3 +412,4 @@ Diagrama de casos de uso de la calculadora de salud. Los casos de uso implementa
 
 #### Enlaces a la documentación de los Casos de Uso:
 * [Especificación Caso de Uso 1: BMI (Versión Full)](./doc/CU_BMI.txt)
+* [Especificación Caso de Uso 3: MAP](./doc/CU_MAP.txt)
