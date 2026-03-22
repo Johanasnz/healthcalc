@@ -4,13 +4,13 @@ ID: CU-01
 
 Actor principal: Usuario de la calculadora 
 
-Ámbito: Ordenador (Calculadora de salud) 
+Ámbito: HealthCalc
 
 Nivel: Objetivo de usuario
 
 Descripción: El usuario desea obtener el valor de su BMI. Para ello, el usuario debe introducir su peso en kilogramos y su altura en centímetros. La calculadora procesará estos datos y le devolverá al usuario el valor de su BMI junto con su clasificación nutricional correspondiente.
 
-Interesados: 
+Stakeholders e intereses: 
     Usuario: Quiere conocer su IMC para evaluar su estado de salud.
 
     Personal Sanitario: Requiere una métrica estandarizada para clasificar el peso.
