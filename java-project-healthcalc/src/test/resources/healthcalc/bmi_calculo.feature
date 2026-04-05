@@ -16,3 +16,9 @@ Característica: Cálculo del Índice de Masa Corporal (BMI)
     Y una altura de 0.0 m
     Cuando solicito calcular el BMI
     Entonces el sistema informa de que los datos de BMI no son válidos
+ 
+  Escenario: Error por valores fuera de límites físicos
+    Dado un peso de 800,0 kg
+    Y una altura de 0,40 m
+    Cuando solicito calcular el BMI
+    Entonces el sistema informa de que los datos de BMI no son válidos
