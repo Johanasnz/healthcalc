@@ -353,6 +353,32 @@ A partir del valor numérico obtenido, el sistema categoriza el estado del pacie
 
 ## Behaviour Driven Development
 
+### Historia de usuario - Cálculo del Índice de Masa Corporal (BMI)
+**Como** usuario, **quiero** calcular mi BMI a partir de mi peso y mi altura, **para** conocer mi índice de masa corporal de forma correcta.
+
+Escenarios:
+- Calcular el BMI con valores válidos
+- Error por valores negativos o iguales a cero
+- Error por valores fuera de límites físicos
+
+Fichero: [bmi_calculo.feature](java-project-healthcalc/src/test/resources/healthcalc/bmi_calculo.feature)
+
+### Historia de usuario - Clasificación del estado nutricional a partir del BMI
+
+**Como** usuario, **quiero** clasificar mi BMI usando la versión Full, **para** conocer con precisión mi estado de peso.
+
+Escenarios:
+- Clasificar como Delgadez Severa
+- Clasificar como Delgadez Moderada
+- Clasificar como Delgadez Leve
+- Clasificar como Peso Normal
+- Clasificar como Pre-obesidad
+- Clasificar como Obesidad Clase I
+- Clasificar como Obesidad Clase II
+- Clasificar como Obesidad Clase III
+
+Fichero: [bmi_clasificacion.feature](java-project-healthcalc/src/test/resources/healthcalc/bmi_clasificacion.feature)
+
 ### Historia de usuario - Cálculo del peso corporal ideal (IBW)
 
 **Como** usuario, **quiero** calcular el peso corporal ideal usando la fórmula de Lorentz a partir de mi sexo y mi altura, **para** conocer mi peso óptimo.
