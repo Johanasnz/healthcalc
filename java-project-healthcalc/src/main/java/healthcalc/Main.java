@@ -1,3 +1,6 @@
+package healthcalc;
+
+
 import java.awt.EventQueue;
 
 public class Main {
