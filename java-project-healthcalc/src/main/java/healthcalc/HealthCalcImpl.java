@@ -1,7 +1,7 @@
 package healthcalc;
 import healthcalc.exceptions.InvalidHealthDataException;
 
-public class HealthCalcImpl implements HealthCalc, BasalMetabolicIndex {
+public class HealthCalcImpl implements HealthCalc, BasalMetabolicIndex, OtraMetrica, IdealBodyWeight {
     private static HealthCalcImpl instance;
     private HealthCalcImpl() {
     }
@@ -106,6 +106,14 @@ public class HealthCalcImpl implements HealthCalc, BasalMetabolicIndex {
     @Override
     public BMICategory category(Person person) throws InvalidHealthDataException {
         float value = basalMetabolicIndex(person);
+
+        if (value < 0) {
+            throw new InvalidHealthDataException("El IMC no puede ser negativo.");
+        }
+        if (value > 150) {
+            throw new InvalidHealthDataException("El IMC debe estar en un rango biológico posible [0-150].");
+        }
+
         if (value < 16.0f)      return BMICategory.SEVERE_THINNESS;
         else if (value < 17.0f) return BMICategory.MODERATE_THINNESS;
         else if (value < 18.5f) return BMICategory.MILD_THINNESS;
@@ -114,5 +122,24 @@ public class HealthCalcImpl implements HealthCalc, BasalMetabolicIndex {
         else if (value < 35.0f) return BMICategory.OBESE_CLASS_I;
         else if (value < 40.0f) return BMICategory.OBESE_CLASS_II;
         else                    return BMICategory.OBESE_CLASS_III;
+    }
+
+    //OtraMetrica
+    @Override
+    public float m(Person person) throws InvalidHealthDataException {
+        return calculateMAP(person.systolicPressure(), person.diastolicPressure());
+    }
+
+    @Override
+    public MAPCategory mapCategory(Person person) throws InvalidHealthDataException {
+        float mapValue = m(person);
+        if (mapValue < 70) return MAPCategory.LOW;
+        else if (mapValue <= 100) return MAPCategory.NORMAL;
+        else return MAPCategory.HIGH;
+    }
+
+    @Override
+    public float idealBodyWeight(Person person) throws InvalidHealthDataException {
+        return (float) ibw((int)(person.height() * 100), person.gender() == Gender.MALE ? "hombre" : "mujer");
     }
 }
